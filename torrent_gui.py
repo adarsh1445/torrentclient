@@ -412,7 +412,7 @@ class MainWindow(QMainWindow):
             widget = self._list_widget.itemWidget(item)
             if widget.waiting_control_action:
                 continue
-
+#torrent_gui.py
             if widget.state.paused:
                 self._resume_action.setEnabled(True)
             else:

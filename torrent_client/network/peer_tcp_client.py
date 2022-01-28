@@ -359,6 +359,7 @@ class PeerTCPClient:
 
         self._send_message(MessageType.request if not cancel else MessageType.cancel,
                            struct.pack('!3I', request.piece_index, request.block_begin, request.block_length))
+        #added a peer to peer cli
 
     async def _send_block(self, request: BlockRequest):
         block = await self._file_structure.read(
@@ -378,3 +379,5 @@ class PeerTCPClient:
             self._writer.close()
 
         self._connected = False
+        
+        
